@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumari Garima | AI & ML Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #22c55e; /* Terminal Green */
+            --accent: #10b981; /* Emerald */
+            --void-black: #050505;
+            --card-bg: rgba(10, 10, 10, 0.8);
+        }
+
+        body {
+            background-color: var(--void-black);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradientMove 4s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.2);
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 40vw;
+            height: 40vw;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: 0;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--void-black); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+    </style>
+</head>
+<body class="relative overflow-x-hidden">
+
+    <!-- Atmospheric Glows -->
+    <div class="hero-glow bg-green-500 top-[-10%] left-[-10%] animate-pulse"></div>
+    <div class="hero-glow bg-emerald-500 bottom-[10%] right-[-10%] animate-pulse" style="animation-delay: 2s;"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <span class="text-xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+                KG
+            </span>
+            <div class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-widest">
+                <a href="#about" class="nav-link text-gray-400">About</a>
+                <a href="#skills" class="nav-link text-gray-400">Skills</a>
+                <a href="#projects" class="nav-link text-gray-400">Projects</a>
+                <a href="#achievements" class="nav-link text-gray-400">Achievements</a>
+                <a href="#contact" class="nav-link text-gray-400">Contact</a>
+            </div>
+            <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-black/95 backdrop-blur-lg w-full p-8 flex flex-col items-center gap-6 border-b border-white/5">
+            <a href="#about" onclick="toggleMobileMenu()" class="nav-link text-white">About</a>
+            <a href="#skills" onclick="toggleMobileMenu()" class="nav-link text-white">Skills</a>
+            <a href="#projects" onclick="toggleMobileMenu()" class="nav-link text-white">Projects</a>
+            <a href="#achievements" onclick="toggleMobileMenu()" class="nav-link text-white">Achievements</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="nav-link text-white">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative pt-20">
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="inline-block mb-6 px-4 py-2 border border-green-500/30 rounded-full bg-green-500/5">
+                <span class="text-xs font-bold tracking-widest text-green-400 uppercase">AI & Machine Learning Enthusiast</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-8xl font-black mb-6 tracking-tighter">
+                <span class="block text-white opacity-90">Hi, I'm</span>
+                <span class="bg-gradient-to-r from-green-400 via-emerald-400 to-green-500 bg-clip-text text-transparent animate-gradient">
+                    Kumari Garima
+                </span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+                Computer Science Engineering student passionate about building impactful AI solutions for <span class="text-white">smart cities</span>, <span class="text-white">healthcare</span>, and <span class="text-white">personalized services</span>.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="#projects" class="bg-white text-black px-8 py-4 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-green-500 hover:text-black transition-all">
+                    View My Projects <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+                <a href="#contact" class="border border-white/10 px-8 py-4 rounded-sm font-bold text-xs uppercase tracking-widest hover:border-green-500 transition-all">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 bg-black/20">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black uppercase tracking-tighter mb-2">About Me</h2>
+                <div class="w-12 h-1 bg-green-500 mx-auto"></div>
+            </div>
+            
+            <div class="glass-card p-10 rounded-2xl flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-48 h-48 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 p-[1px] shrink-0">
+                    <div class="w-full h-full rounded-2xl bg-zinc-900 flex items-center justify-center">
+                        <span class="text-5xl font-black text-white italic">KG</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                        Second-year Computer Science Engineering (AI & ML) student with hands-on project experience in AI-based safety systems, smart surveillance, and intelligent chatbots.
+                    </p>
+                    <p class="text-lg text-gray-400 leading-relaxed mb-8">
+                        Demonstrated ability to design and develop end-to-end solutions integrating hardware, software, and LLMs. Passionate about building impactful, socially relevant technologies.
+                    </p>
+                    <div class="flex items-center gap-4 text-green-400 font-bold text-sm">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span class="text-gray-400">B.Tech CSE (AI & ML) - MIET, AKTU | Graduating June 2027</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-32">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl font-black uppercase tracking-tighter text-center mb-16">Technical Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Skill Group -->
+                <div class="glass-card p-8 rounded-xl">
+                    <i class="fas fa-code text-green-500 text-3xl mb-6"></i>
+                    <h3 class="text-lg font-bold mb-4">Programming</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-gray-400">PYTHON</span>
+                        <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-gray-400">C/C++</span>
+                        <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-gray-400">HTML/CSS</span>
+                        <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-gray-400">JAVASCRIPT</span>
+                    </div>
+                </div>
+                <!-- Skill Group -->
+                <div class="glass-card p-8 rounded-xl">
+                    <i class="fas fa-brain text-green-500 text-3xl mb-6"></i>
+                    <h3 class="text-lg font-bold mb-4">AI & Data</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-gray-400">PANDAS</span>
+                        <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-gray-400">OPENCV</span>
+                        <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-gray-400">TENSORFLOW</span>
+                        <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-gray-400">NUMPY</span>
+                    </div>
+                </div>
+                <!-- Skill Group -->
+                <div class="glass-card p-8 rounded-xl">
+                    <i class="fas fa-robot text-green-500 text-3xl mb-6"></i>
+                    <h3 class="text-lg font-bold mb-4">Generative AI</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-gray-400">GEMINI API</span>
+                        <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-gray-400">PROMPT ENG.</span>
+                        <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-gray-400">LANGCHAIN</span>
+                        <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-gray-400">NLP</span>
+                    </div>
+                </div>
+                <!-- Skill Group -->
+                <div class="glass-card p-8 rounded-xl">
+                    <i class="fab fa-github text-green-500 text-3xl mb-6"></i>
+                    <h3 class="text-lg font-bold mb-4">Tools</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-gray-400">GIT</span>
+                        <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-gray-400">VS CODE</span>
+                        <span class="px-3 py-1 bg-white/5 rounded text-[10px] font-bold text-gray-400">COLAB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-32 bg-black/40">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl font-black uppercase tracking-tighter text-center mb-16">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Women Safety App -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col h-full group">
+                    <span class="text-[10px] font-black text-green-500 tracking-[0.3em] mb-4 uppercase">SIH Top 10 Team</span>
+                    <h3 class="text-2xl font-black mb-4 group-hover:text-green-400 transition-colors">Women Safety App</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                        Mobile safety application integrating GPS tracking, SOS alerts, and geofencing to notify trusted contacts and authorities during emergencies.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-2 py-1 bg-white/5 rounded text-[9px] font-bold text-gray-400">FLUTTER</span>
+                        <span class="px-2 py-1 bg-white/5 rounded text-[9px] font-bold text-gray-400">FIREBASE</span>
+                    </div>
+                </div>
+
+                <!-- AI Astrologer Chatbot -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col h-full group">
+                    <span class="text-[10px] font-black text-emerald-500 tracking-[0.3em] mb-4 uppercase">GenAI Project</span>
+                    <h3 class="text-2xl font-black mb-4 group-hover:text-emerald-400 transition-colors">AI Astrologer Bot</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                        A personalized Vedic astrology chatbot that generates instant birth charts, daily horoscopes, and planetary transit insights using advanced LLMs.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-2 py-1 bg-white/5 rounded text-[9px] font-bold text-gray-400">GEMINI API</span>
+                        <span class="px-2 py-1 bg-white/5 rounded text-[9px] font-bold text-gray-400">PYTHON</span>
+                        <span class="px-2 py-1 bg-white/5 rounded text-[9px] font-bold text-gray-400">STREAMLIT</span>
+                    </div>
+                </div>
+
+                <!-- CCTV Criminal Detection -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col h-full group">
+                    <span class="text-[10px] font-black text-green-500 tracking-[0.3em] mb-4 uppercase">1st Runner-up Trikon</span>
+                    <h3 class="text-2xl font-black mb-4 group-hover:text-green-400 transition-colors">CCTV Criminal Detection</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                        AI-powered system that analyzes CCTV footage to detect suspicious activities and known criminals using face and object recognition.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-2 py-1 bg-white/5 rounded text-[9px] font-bold text-gray-400">OPENCV</span>
+                        <span class="px-2 py-1 bg-white/5 rounded text-[9px] font-bold text-gray-400">TENSORFLOW</span>
+                    </div>
+                </div>
+
+                <!-- Period Help Chatbot -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col h-full group">
+                    <span class="text-[10px] font-black text-emerald-500 tracking-[0.3em] mb-4 uppercase">Health-Tech AI</span>
+                    <h3 class="text-2xl font-black mb-4 group-hover:text-emerald-400 transition-colors">Menstrual Health AI</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                        An empathetic AI companion providing menstrual health education, cycle tracking predictions, and symptom management advice.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-2 py-1 bg-white/5 rounded text-[9px] font-bold text-gray-400">NLP</span>
+                        <span class="px-2 py-1 bg-white/5 rounded text-[9px] font-bold text-gray-400">Llama/GPT</span>
+                        <span class="px-2 py-1 bg-white/5 rounded text-[9px] font-bold text-gray-400">NODE.JS</span>
+                    </div>
+                </div>
+
+                <!-- Traffic Management -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col h-full group">
+                    <span class="text-[10px] font-black text-green-500 tracking-[0.3em] mb-4 uppercase">Smart Infrastructure</span>
+                    <h3 class="text-2xl font-black mb-4 group-hover:text-green-400 transition-colors">Smart Traffic Control</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                        Intelligent traffic system using IoT and AI to reduce congestion and improve road safety with real-time adaptive signal control.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-2 py-1 bg-white/5 rounded text-[9px] font-bold text-gray-400">IOT</span>
+                        <span class="px-2 py-1 bg-white/5 rounded text-[9px] font-bold text-gray-400">REACT.JS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-32">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl font-black uppercase tracking-tighter text-center mb-16">Achievements</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="glass-card p-8 text-center rounded-xl">
+                    <i class="fas fa-award text-green-500 text-4xl mb-6"></i>
+                    <h3 class="font-bold text-lg mb-2">SIH 2024</h3>
+                    <p class="text-xs text-gray-500">Top 10 AI Teams Nationally</p>
+                </div>
+                <div class="glass-card p-8 text-center rounded-xl">
+                    <i class="fas fa-trophy text-green-500 text-4xl mb-6"></i>
+                    <h3 class="font-bold text-lg mb-2">Trikon 2.0</h3>
+                    <p class="text-xs text-gray-500">1st Runner-up Award</p>
+                </div>
+                <div class="glass-card p-8 text-center rounded-xl">
+                    <i class="fas fa-users text-green-500 text-4xl mb-6"></i>
+                    <h3 class="font-bold text-lg mb-2">Dev Gathering</h3>
+                    <p class="text-xs text-gray-500">Top Performing Recognition</p>
+                </div>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-l-4 border-l-green-500 text-center">
+                <p class="text-gray-300 italic">
+                    <span class="text-green-400 font-bold uppercase tracking-widest text-[10px]">Leadership:</span> 
+                    Served as Team Lead for Women Safety, AI Chatbot, and CCTV Detection projects.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-40 bg-black/40">
+        <div class="container mx-auto px-6 max-w-2xl text-center">
+            <h2 class="text-5xl font-black tracking-tighter mb-8">GET IN <span class="text-green-500">TOUCH.</span></h2>
+            <p class="text-gray-400 mb-12">
+                Actively seeking internships or training opportunities in AI development, smart city applications, or tech-for-good domains. Let's connect!
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:kumari.garima2703@gmail.com" class="px-6 py-4 glass-card rounded hover:text-green-400 transition-colors flex items-center gap-3">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="tel:+919650988770" class="px-6 py-4 glass-card rounded hover:text-green-400 transition-colors flex items-center gap-3">
+                    <i class="fas fa-phone"></i> Phone
+                </a>
+                <a href="https://linkedin.com/in/kumari-garima-36bbb2286/" target="_blank" class="px-6 py-4 glass-card rounded hover:text-green-400 transition-colors flex items-center gap-3">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/kumarigarima09" target="_blank" class="px-6 py-4 glass-card rounded hover:text-green-400 transition-colors flex items-center gap-3">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 text-center">
+        <p class="text-[10px] font-bold tracking-[0.5em] text-gray-600 uppercase">
+            &copy; 2025 KUMARI GARIMA &bull; BUILT WITH AI & PASSION
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Sticky Navbar behavior
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-black/80', 'backdrop-blur-xl', 'border-white/5');
+            } else {
+                navbar.classList.remove('bg-black/80', 'backdrop-blur-xl', 'border-white/5');
+            }
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        }
+    </script>
+</body>
+</html>
